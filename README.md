@@ -1,6 +1,6 @@
 # **AnimalPose - Estimativa de Pose para Bovinos**
 
-Este projeto tem como objetivo a implementação de estimativa de pose para bovinos, usando o **ANIMAL-POSE DATASET** (https://sites.google.com/view/animal-pose/). Abaixo estão descritas as etapas seguidas durante o projeto, incluindo a análise exploratória, filtragem do dataset, resultados finais e conclusões.
+Este projeto tem como objetivo a implementação de estimativa de pose para bovinos, usando o **ANIMAL-POSE DATASET** (https://www.kaggle.com/datasets/bloodaxe/animal-pose-dataset). Abaixo estão descritas as etapas seguidas durante o projeto, incluindo a análise exploratória, filtragem do dataset, resultados finais e conclusões.
 
 ---
 
