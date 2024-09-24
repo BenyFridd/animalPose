@@ -10,7 +10,7 @@ Para iniciar, foi realizada uma análise exploratória do dataset, onde focamos 
 
 ### **Heatmap da Distribuição dos Pontos-Chave nas Imagens de Vacas**
 
-![Heatmap dos Keypoints](img\download.png)
+![Heatmap dos Keypoints](img/download.png)
 
 **Descrição**: O heatmap apresenta a distribuição dos pontos-chave ao longo das imagens das vacas. Cada ponto vermelho no gráfico representa a posição de um ponto-chave em uma imagem de vaca. As áreas mais quentes (em amarelo) indicam regiões com maior concentração de pontos-chave.
 
@@ -20,7 +20,7 @@ Para iniciar, foi realizada uma análise exploratória do dataset, onde focamos 
 
 ### **Frequência de Visibilidade por Ponto-Chave (Vacas)**
 
-![Gráfico de Frequência de Visibilidade](img\download1.png)
+![Gráfico de Frequência de Visibilidade](img/download1.png)
 
 **Descrição**: Este gráfico de barras mostra a frequência com que cada ponto-chave é visível nas imagens de vacas. O eixo X representa os IDs dos pontos-chave (1 a 20), enquanto o eixo Y indica quantas vezes cada ponto foi anotado como visível.
 
@@ -57,7 +57,7 @@ Após a análise exploratória, o dataset foi **filtrado** para garantir que ape
 
 ### **Distribuição de Keypoints Visíveis por Imagem**
 
-![Distribuição de Keypoints Visíveis](img\download3.png)
+![Distribuição de Keypoints Visíveis](img/download3.png)
 
 **Análise**:
 - A maioria das imagens contém entre 15 e 20 pontos-chave visíveis, o que indica uma anotação bem completa para a maior parte do dataset.
@@ -65,7 +65,7 @@ Após a análise exploratória, o dataset foi **filtrado** para garantir que ape
 
 ### **Distribuição do Tamanho das Bounding Boxes**
 
-![Distribuição do Tamanho das Bounding Boxes](img\download4.png)
+![Distribuição do Tamanho das Bounding Boxes](img/download4.png)
 
 **Análise**:
 - A **média** do tamanho das bounding boxes é de aproximadamente **82.256 pixels²**, enquanto a **mediana** é de **68.024 pixels²**.
@@ -91,9 +91,5 @@ Após a análise exploratória, o dataset foi **filtrado** para garantir que ape
 
 ---
 
-## **Repositório GitHub**
 
-O código completo da implementação e os gráficos gerados estão disponíveis no repositório GitHub: [Link para o Repositório](https://github.com/seu-usuario-inteli/animal-pose).
-
----
 
