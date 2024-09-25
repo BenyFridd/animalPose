@@ -53,7 +53,31 @@ Após a análise exploratória, o dataset foi **filtrado** para garantir que ape
 
 ---
 
-## **3. Resultados Finais com Gráficos e Tabelas**
+## **3. Estimativa de Pose com MediaPipe**
+
+Além da análise e filtragem das imagens de vacas, integramos o uso da biblioteca **MediaPipe** para realizar a **estimativa de pose**. O MediaPipe é amplamente utilizado para estimativa de pose em humanos, e, neste projeto, foi testado em vacas para avaliar sua eficácia.
+
+### **Processo de Estimativa de Pose**:
+
+1. A imagem da vaca foi carregada e convertida para o formato RGB.
+2. O **MediaPipe Pose** foi utilizado para detectar e rastrear as posições das articulações principais do corpo do bovino.
+3. A imagem foi anotada com os pontos de pose detectados, e as conexões entre esses pontos foram desenhadas.
+
+#### **Exemplo de Estimativa de Pose**:
+
+![Estimativa de Pose](img/download5.png)
+
+**Análise dos Resultados**:
+- **Imagens de Vacas**: O modelo **não foi capaz de detectar corretamente** as poses nas vacas. Isso acontece porque o MediaPipe foi treinado para identificar poses humanas, e a anatomia das vacas não é semelhante à dos humanos. Logo, o modelo não consegue reconhecer os pontos-chave de maneira adequada.
+- **Imagens de Humanos**: Quando utilizado em imagens de humanos, o MediaPipe funcionou corretamente, identificando de maneira precisa os pontos principais da pose, como articulações e membros.
+
+### **Limitações do MediaPipe**:
+- A **estimativa de pose** do MediaPipe é altamente eficaz para humanos, mas não é adequada para animais sem treinamento adicional.
+- Para obter bons resultados em vacas, seria necessário treinar um modelo específico que se adapte à anatomia dos bovinos, usando redes neurais mais avançadas ou técnicas como **transfer learning**.
+
+---
+
+## **4. Resultados Finais com Gráficos e Tabelas**
 
 ### **Distribuição de Keypoints Visíveis por Imagem**
 
@@ -73,23 +97,19 @@ Após a análise exploratória, o dataset foi **filtrado** para garantir que ape
 
 ---
 
-## **4. Conclusões e Trabalhos Futuros**
+## **5. Conclusões e Trabalhos Futuros**
 
 ### **Principais Aprendizados**:
 - A análise exploratória do dataset mostrou que as anotações de pontos-chave são consistentes para a maioria das imagens, com muitos pontos visíveis em áreas como a cabeça e as pernas dos bovinos.
 - O processamento das imagens de vacas foi bem-sucedido ao aplicar bounding boxes e plotar os keypoints, mesmo em imagens com múltiplos animais.
-- Notou-se que algumas imagens apresentavam menos pontos-chave visíveis, sugerindo possíveis dificuldades em anotar corretamente todos os keypoints em certos cenários.
+- A tentativa de usar o MediaPipe para estimativa de pose em vacas mostrou que modelos de estimativa de pose precisam ser especificamente adaptados para capturar corretamente a anatomia dos bovinos.
 
 ### **Limitações**:
+- O MediaPipe, que funciona corretamente para humanos, não foi capaz de identificar corretamente os pontos de pose em vacas devido à diferença anatômica.
 - Algumas imagens possuem menos keypoints visíveis, o que pode ser um desafio para modelos de estimativa de pose que dependem de um conjunto completo de pontos.
 - O dataset contém uma grande variação no tamanho das bounding boxes, o que pode exigir modelos mais robustos para lidar com diferentes escalas e poses dos animais.
 
 ### **Sugestões para Trabalhos Futuros**:
 - **Melhorar a Detecção de Keypoints Ocultos**: Desenvolver técnicas para estimar melhor keypoints ocultos ou não visíveis, utilizando aprendizado profundo para preencher lacunas quando partes do corpo estão obstruídas.
-- **Aprimorar o Modelo de Estimativa de Pose**: Considerar modelos mais robustos, como **OpenPose** ou **DeepLabCut**, especificamente ajustados para lidar com as variações de poses em bovinos.
+- **Treinamento de um Modelo Específico para Bovinos**: Treinar um modelo de estimativa de pose específico para bovinos, com base nos dados do **ANIMAL-POSE DATASET**, para capturar com precisão os pontos-chave anatômicos das vacas.
 - **Aplicação em Ambientes Reais**: Futuras implementações poderiam focar em aplicar este tipo de estimativa de pose em contextos reais, como fazendas, onde a detecção de movimentos e posturas poderia ajudar a monitorar a saúde dos animais.
-
----
-
-
-
